@@ -1,37 +1,9 @@
-class Cliente {
-  nombreCliente;
-  rutCliente;
-}
+//Importación de las clases
+import { CuentaCorriente } from "./CuentaCorriente.js";
 
-class CuentaCorriente {
-  numero;
-  #saldo;
-  agencia;
-
-  constructor() {
-    this.#saldo = 0;
-    this.numero = "";
-  }
-
-  //Metodos
-  depositoEnCuenta(valor) {
-    if (valor > 0) this.#saldo += valor;
-    return this.#saldo;
-  }
-
-  retiroEnCuenta(valor) {
-    if (valor <= this.#saldo) this.#saldo -= valor;
-    return this.#saldo;
-  }
-
-  verSaldo() {
-    return this.#saldo;
-  }
-}
-
-const cliente1 = new Cliente();
+/*const cliente1 = new Cliente();
 cliente1.nombreCliente = "Tobby";
-cliente1.rutCliente = "13804050";
+cliente1.rutCliente = "13804050";*/
 
 const CuentaCorriente1 = new CuentaCorriente();
 CuentaCorriente1.numero = "12365895";
