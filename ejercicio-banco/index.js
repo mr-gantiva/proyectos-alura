@@ -13,20 +13,19 @@ class CuentaCorriente {
     this.numero = "";
   }
 
+  //Metodos
   depositoEnCuenta(valor) {
-    if (valor > 0) {
-      this.#saldo += valor;
-    } else {
-      console.log("Valor a depositar no es valido");
-    }
+    if (valor > 0) this.#saldo += valor;
+    return this.#saldo;
   }
 
   retiroEnCuenta(valor) {
-    if (valor <= this.#saldo) {
-      this.#saldo -= valor;
-    } else {
-      console.log("Saldo insuficiente");
-    }
+    if (valor <= this.#saldo) this.#saldo -= valor;
+    return this.#saldo;
+  }
+
+  verSaldo() {
+    return this.#saldo;
   }
 }
 
@@ -38,28 +37,14 @@ const CuentaCorriente1 = new CuentaCorriente();
 CuentaCorriente1.numero = "12365895";
 CuentaCorriente1.agencia = 1001;
 
-const cliente2 = new Cliente();
-cliente2.nombreCliente = "Iván";
-cliente2.rutCliente = "44599731";
+let saldo = CuentaCorriente1.verSaldo();
+console.log("El saldo actual es " + saldo);
 
-const CuentaCorriente2 = new CuentaCorriente();
-CuentaCorriente2.numero = "26588946";
-CuentaCorriente2.agencia = 1001;
+saldo = CuentaCorriente1.depositoEnCuenta(1000);
+console.log("El saldo actual es " + saldo);
 
-const cliente3 = new Cliente();
-cliente3.nombreCliente = "Ana";
-cliente3.rutCliente = "1689876";
+saldo = CuentaCorriente1.retiroEnCuenta(400);
+console.log("El saldo actual es " + saldo);
 
-const CuentaCorriente3 = new CuentaCorriente();
-CuentaCorriente3.numero = "98947689";
-CuentaCorriente3.agencia = 1001;
-
-console.log("Saldo inicial: " + CuentaCorriente2.saldo);
-CuentaCorriente2.depositoEnCuenta(100);
-console.log("Depositado: " + CuentaCorriente2.saldo);
-
-CuentaCorriente2.retiroEnCuenta(400);
-console.log("Saldo después del retiro : " + CuentaCorriente2.saldo);
-
-CuentaCorriente2.depositoEnCuenta(1000);
-console.log("Saldo después del deposito : " + CuentaCorriente2.saldo);
+saldo = CuentaCorriente1.depositoEnCuenta(20);
+console.log("El saldo actual es " + saldo);
