@@ -13,14 +13,14 @@ cliente2.rutCliente = "18678796";
 const CuentaCorriente1 = new CuentaCorriente();
 CuentaCorriente1.numero = "1";
 CuentaCorriente1.agencia = "001";
-CuentaCorriente1.cliente = cliente1;
+CuentaCorriente1.setCliente = cliente1;
 
 const CuentaCorriente2 = new CuentaCorriente();
 CuentaCorriente2.numero = "2";
 CuentaCorriente2.agencia = "002";
-CuentaCorriente2.cliente = cliente2;
+CuentaCorriente2.setCliente = cliente2;
 
-console.log(CuentaCorriente1);
+console.log(CuentaCorriente1.getCliente);
 
 let saldo = CuentaCorriente1.verSaldo();
 console.log("El saldo actual es " + saldo);
